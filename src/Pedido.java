@@ -7,9 +7,9 @@ public class Pedido {
     private List<IProduto> itens;
     private String andamento;
 
-    public Pedido(int numero, Cliente cliente, String andamento) {
+    public Pedido(int numero, String nomeCliente, String emailCliente, String telefoneCliente, String andamento) {
         this.numero = numero;
-        this.cliente = cliente;
+        this.cliente = new Cliente(nomeCliente, emailCliente, telefoneCliente); // Cliente é criado dentro do Pedido
         this.itens = new ArrayList<>();
         this.andamento = andamento;
     }
@@ -29,9 +29,10 @@ public class Pedido {
         }
         return total;
     }
+
     public void imprimirPedido() {
         System.out.println("Pedido Número: " + numero);
-        System.out.println("Cliente: " + cliente.getNome() +"\nEmail: " + cliente.getEmail() + "\nTelefone: " + cliente.getTelefone() + "");
+        System.out.println("Cliente: " + cliente.getNome() + "\nEmail: " + cliente.getEmail() + "\nTelefone: " + cliente.getTelefone());
         System.out.println("Andamento: " + andamento);
         System.out.println("Itens do Pedido:");
         for (IProduto item : itens) {
