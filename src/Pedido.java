@@ -9,7 +9,7 @@ public class Pedido {
 
     public Pedido(int numero, String nomeCliente, String emailCliente, String telefoneCliente, String andamento) {
         this.numero = numero;
-        this.cliente = new Cliente(nomeCliente, emailCliente, telefoneCliente); // Cliente é criado dentro do Pedido
+        this.cliente = new Cliente(nomeCliente, emailCliente, telefoneCliente);
         this.itens = new ArrayList<>();
         this.andamento = andamento;
     }
